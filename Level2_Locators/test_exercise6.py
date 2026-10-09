@@ -9,11 +9,8 @@ Your test should assert something like -> number of products > 0
 from playwright.sync_api import Playwright, expect
 
 
-def test_count_products(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
-    page = context.new_page()
-
+def test_count_products(broweseInstance):
+    page = broweseInstance
     # Go to amazon
     page.goto("https://www.amazon.in/")
 
